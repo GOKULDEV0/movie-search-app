@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+#  OMDb Movie Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive web app that allows users to search for movies using the **OMDb API** and view results in a clean, card-based layout.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+##  Overview
 
-### `npm start`
+This app uses the [OMDb API](https://www.omdbapi.com/) to fetch and display movie data based on user input.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+###  API Endpoints Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **Search Endpoint:**
 
-### `npm test`
+  ```
+  https://www.omdbapi.com/?s={SEARCH_TERM}&apikey={YOUR_API_KEY}
+  ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  Used to retrieve a list of movies based on the user's search query.
 
-### `npm run build`
+* **(Optional) Detail Endpoint:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ```
+  https://www.omdbapi.com/?i={IMDB_ID}&apikey={YOUR_API_KEY}
+  ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  Used to fetch full details of a movie using its IMDb ID. *(Not implemented by default in this version)*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+##  Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Search for movies by title.
+* Displays results in responsive cards.
+* Includes movie poster, title, and release year.
+* Placeholder image shown for missing posters.
+* Responsive layout using **CSS Grid**.
+* Graceful error handling for:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  * Empty results
+  * Network failures
+  * Invalid API keys
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠️ Project Setup
 
-## Learn More
+### 1. Clone the Repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+git clone https://github.com/your-username/omdb-movie-search-app.git
+cd omdb-movie-search-app
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Insert Your API Key
 
-### Code Splitting
+1. Visit: [OMDb API Signup](http://www.omdbapi.com/apikey.aspx)
+2. Get your free API key.
+3. Open `app.js` and replace `'YOUR_API_KEY_HERE'` with your actual key:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+const API_KEY = 'your_actual_api_key';
+```
 
-### Analyzing the Bundle Size
+### 3. Run the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Simply open `index.html` in your browser.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##  Usage Instructions
 
-### Advanced Configuration
+1. Enter a movie title in the search box.
+2. Click the **Search** button.
+3. View movie results including:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   * Poster image
+   * Movie title
+   * Release year
 
-### Deployment
+> If a movie doesn't have a poster, a default placeholder will be shown.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+##  File Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+.
+├── index.html      // HTML structure
+├── styles.css      // Styling and layout
+├── app.js          // JavaScript functionality and API integration
+└── README.md       // Project documentation
+```
+
+---
+
+##  Responsive Design
+
+* **Mobile**: 1 column
+* **Tablet/Desktop**: 2–3 columns
+* Built using **CSS Grid** and **flexible layout units**
+
+---
+
+##  Testing
+
+Tested successfully on:
+
+* ✅ Google Chrome (latest)
+* ✅ Mozilla Firefox (latest)
+
+---
+
+##  Challenges & Solutions
+
+| Challenge                            | Solution                                                                 |
+| ------------------------------------ | ------------------------------------------------------------------------ |
+| Some movies don't have poster images | Used a placeholder image for `"Poster": "N/A"`                           |
+| Empty or invalid search terms        | Disabled search for empty inputs; user must enter a valid title          |
+| Handling API/network errors          | Wrapped fetch in try/catch and displayed user-friendly messages          |
+| Responsive layout across devices     | Used CSS Grid with `auto-fit` and `minmax()` for flexible responsiveness |
+
+---
+
+##  Live Demo (Optional)
+
+If deployed, add your link here:
+
+```
+https://your-username.github.io/omdb-movie-search-app/
+```
+
+---
+
+##  License
+
+This project is open source and available under the [MIT License](LICENSE) *(add one if needed)*.
+
+---
+
+##  Contributions
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+##  Contact
+
+For questions or feedback, feel free to contact me at:
+
+```
+your.email@example.com
+```
+
+Or visit my GitHub profile: [https://github.com/your-username](https://github.com/your-username)
+
+---
