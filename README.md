@@ -8,7 +8,7 @@ A responsive web app that allows users to search for movies using the **OMDb API
 
 This app uses the [OMDb API](https://www.omdbapi.com/) to fetch and display movie data based on user input.
 
-###  API Endpoints Used
+### 🔗 API Endpoints Used
 
 * **Search Endpoint:**
 
@@ -43,7 +43,7 @@ This app uses the [OMDb API](https://www.omdbapi.com/) to fetch and display movi
 
 ---
 
-## 🛠️ Project Setup
+##  Project Setup
 
 ### 1. Clone the Repository
 
@@ -132,11 +132,6 @@ https://your-username.github.io/omdb-movie-search-app/
 
 ---
 
-##  License
-
-This project is open source and available under the [MIT License](LICENSE) *(add one if needed)*.
-
----
 
 ##  Contributions
 
@@ -149,9 +144,9 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 For questions or feedback, feel free to contact me at:
 
 ```
-your.email@example.com
+goguldev28@gmail.com
 ```
 
-Or visit my GitHub profile: [https://github.com/your-username](https://github.com/your-username)
+Or visit my GitHub profile: [https://github.com/your-username](https://github.com/GOKULDEV0)
 
 ---
