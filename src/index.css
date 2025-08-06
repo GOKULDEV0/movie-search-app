@@ -4,6 +4,7 @@ body {
   background-image: url(https://wallpapers.com/images/featured/movie-background-4saldhgir0h87q13.jpg);
   background-size: cover;
   background-position: center;
+  height: 1500px;
   background-repeat: no-repeat;
   margin: 0;
   padding: 1rem;
@@ -59,7 +60,7 @@ button {
 #searchBtn:hover{
   font-size: 20px;
   background-color: lightblue;
-  font-style: ;
+  
 }
 
 
